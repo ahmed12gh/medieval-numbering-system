@@ -7,7 +7,7 @@ imageSize = (64,64) # (width , height ) using -> imagesize[0] = firstNumber
 
 
 def main():
-    if sys.argv.__len__() == 2 and sys.argv[1] <= 9999: 
+    if sys.argv.__len__() == 2 and int(sys.argv[1]) <= 9999: 
         old = OldNumber((600,600) , int(sys.argv[1]))
         old.img.show()
 
