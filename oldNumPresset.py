@@ -8,7 +8,7 @@ class OldNumber():
     color = (255,255,255,255)
     
     def zero(self):
-        # just craete line 
+        # just create line 
         x ,  y  = self.size[0] / 2 , 0      # x = half  width , y = start image
         x2 , y2 = self.size[0] /2 , self.size[1] # the same x , y = end
 
@@ -31,93 +31,77 @@ class OldNumber():
         # draws one in eithir tens or units or hundreds or thousands 
         b = self.borderLength
         w , h = self.size
-        halfW , halfH = (self.size[0]/2 , self.size[1] /2) # make var that is half the width and height
-        offx , offy  = (  -halfW , -halfH ) # make an offset (150 , 150) :: defult
-        sclx , scly = self.scale(level) # getting the scale from the funtion 
-
-        x  , y  = ( (halfW+ offx)*sclx      , ( b + offy)*scly )  # (150,0) x= 150 * 1 -offx = 0 , y=150 * 1-offy = 0 
+        halfW , halfH = (self.size[0]/2 , self.size[1] /2) 
+        offx , offy  = (  -halfW , -halfH ) 
+        sclx , scly = self.scale(level) 
+        
+        # horizantal line 
+        x  , y  = ( (halfW+ offx)*sclx      , ( b + offy)*scly ) # (halfSize , 0) 
         x2 , y2 = ( ( (3/4*w) + offx)*sclx  , (b + offy)*scly ) # (3/4 size , 0)
- 
-        print(x ,' ' , y , ' ')
-        print(x2 , ' ' , y2 , ' ') 
   
-        x-=offx ; y-=offy ; x2-=offx ; y2-=offy 
+        x-=offx ; y-=offy ; x2-=offx ; y2-=offy # removing offset  
 
-        print(x ,' ' , y , ' ')
-        print(x2 , ' ' , y2 , ' ') 
         self.draw.line((x,y,x2,y2) , fill = self.color , width = self.borderLength)
 
     def num_2(self , level : int ):
         b             = self.borderLength
         w , h         = self.size
-        halfW , halfH = (self.size[0]/2 , self.size[1] /2) # make var that is half the width and height
-        offx , offy   = (  -halfW , -halfH ) # make an offset (150 , 150) :: defult
-        sclx , scly   = self.scale(level) # getting the scale from the funtion 
+        halfW , halfH = (self.size[0]/2 , self.size[1] /2) 
+        offx , offy   = (  -halfW , -halfH ) 
+        sclx , scly   = self.scale(level) 
 
-        x  , y  = ((halfW+offx )*sclx , (offy+halfH/2)*scly )
-        x2 , y2 = ((3/4 * w +offx)*sclx , (offy + halfH/2)*scly)
+        # horizantal line 
+        x  , y  = ((halfW+offx )*sclx , (offy+halfH/2)*scly ) # (halfSize , 1/4 height)
+        x2 , y2 = ((3/4 * w +offx)*sclx , (offy + halfH/2)*scly) #( 3/4 size , 1/4 height )
  
-        print(x ,' ' , y , ' ')
-        print(x2 , ' ' , y2 , ' ') 
-  
-        x-=offx ; y-=offy ; x2-=offx ; y2-=offy 
+        x-=offx ; y-=offy ; x2-=offx ; y2-=offy  # removing the offset 
 
-        print(x ,' ' , y , ' ')
-        print(x2 , ' ' , y2 , ' ') 
         self.draw.line((x,y,x2,y2) , fill =self.color , width = self.borderLength) 
 
 
     def num_3(self , level : int ):
         b             = self.borderLength
         w , h         = self.size
-        halfW , halfH = (self.size[0]/2 , self.size[1] /2) # make var that is half the width and height
-        offx , offy   = (  -halfW , -halfH ) # make an offset (150 , 150) :: defult
-        sclx , scly   = self.scale(level) # getting the scale from the funtion 
+        halfW , halfH = (self.size[0]/2 , self.size[1] /2) 
+        offx , offy   = (  -halfW , -halfH ) 
+        sclx , scly   = self.scale(level) 
 
-        x  , y  = ((offx + halfW)*sclx , (offy+b)*scly) # (150 , 3)
-        x2 , y2 = ((3/4*w + offx)*sclx , (offy + b + halfH /2)*scly )
+        x  , y  = ((offx + halfW)*sclx , (offy+b)*scly) # (half , 0 )
+        x2 , y2 = ((3/4*w + offx)*sclx , (offy + b + halfH /2)*scly ) # 3/4 wdith , 1/4 height
  
-        print(x ,' ' , y , ' ')
-        print(x2 , ' ' , y2 , ' ') 
-  
-        x-=offx ; y-=offy ; x2-=offx ; y2-=offy 
+        x-=offx ; y-=offy ; x2-=offx ; y2-=offy # removing offset  
 
-        print(x ,' ' , y , ' ')
-        print(x2 , ' ' , y2 , ' ') 
         self.draw.line((x,y,x2,y2) , fill=self.color , width = self.borderLength) 
 
 
     def num_4(self , level : int ):
         b             = self.borderLength
         w , h         = self.size
-        halfW , halfH = (self.size[0]/2 , self.size[1] /2) # make var that is half the width and height
-        offx , offy   = (  -halfW , -halfH ) # make an offset (150 , 150) :: defult
-        sclx , scly   = self.scale(level) # getting the scale from the funtion 
+        halfW , halfH = (self.size[0]/2 , self.size[1] /2) 
+        offx , offy   = (  -halfW , -halfH ) 
+        sclx , scly   = self.scale(level) 
 
-        x  , y  = ((offx + 3/4*w)*sclx , (offy+b)*scly) # (150 , 3)
-        x2 , y2 = ((halfW + offx)*sclx , (offy + b + halfH /2)*scly )
+        x  , y  = ((offx + 3/4*w)*sclx , (offy+b)*scly) # 3/4 width , 0  
+        x2 , y2 = ((halfW + offx)*sclx , (offy + b + halfH /2)*scly ) # 1/2 width , 1/4 height 
  
-        print(x ,' ' , y , ' ')
-        print(x2 , ' ' , y2 , ' ') 
-  
         x-=offx ; y-=offy ; x2-=offx ; y2-=offy 
 
-        print(x ,' ' , y , ' ')
-        print(x2 , ' ' , y2 , ' ') 
         self.draw.line((x,y,x2,y2) , fill =self.color , width = self.borderLength) 
 
     def num_5(self, level : int ):
         b             = self.borderLength
         w , h         = self.size
-        halfW , halfH = (self.size[0]/2 , self.size[1] /2) # make var that is half the width and height
-        offx , offy   = (  -halfW , -halfH ) # make an offset (150 , 150) :: defult
-        sclx , scly   = self.scale(level) # getting the scale from the funtion 
+        halfW , halfH = (self.size[0]/2 , self.size[1] /2)
+        offx , offy   = (  -halfW , -halfH )
+        sclx , scly   = self.scale(level)
 
-        x  , y  = ((offx + 3/4*w)*sclx , (offy+b)*scly) # (150 , 3)
-        x2 , y2 = ((halfW + offx)*sclx , (offy + b + halfH /2)*scly )
-        x3 , y3 = ( (halfW+ offx)*sclx      , ( b + offy)*scly )  # (150,0) x= 150 * 1 -offx = 0 , y=150 * 1-offy = 0 
+        # diagonal line
+        x  , y  = ((offx + 3/4*w)*sclx , (offy+b)*scly) # 3/4 width , 0
+        x2 , y2 = ((halfW + offx)*sclx , (offy + b + halfH /2)*scly ) # 1/2 width , 1/4 height
+        # horizantal line 
+        x3 , y3 = ( (halfW+ offx)*sclx      , ( b + offy)*scly )  # 1/2 width , 0 
         x4 , y4 = ( ( (3/4*w) + offx)*sclx  , (b + offy)*scly ) # (3/4 size , 0)
-  
+        #removing offset 
         x-=offx ; y-=offy ; x2-=offx ; y2-=offy 
         x3-=offx ; y3-=offy ; x4-=offx ; y4-=offy
         
@@ -127,43 +111,34 @@ class OldNumber():
     def num_6(self, level : int ):
         b             = self.borderLength
         w , h         = self.size
-        halfW , halfH = (self.size[0]/2 , self.size[1] /2) # make var that is half the width and height
-        offx , offy   = (  -halfW , -halfH ) # make an offset (150 , 150) :: defult
-        sclx , scly   = self.scale(level) # getting the scale from the funtion 
-
-        x  , y  = ((offx + 3/4*w)*sclx , (offy+b)*scly) # (150 , 3)
-        x2 , y2 = ((offx + 3/4*w)*sclx , (offy + b + halfH /2)*scly )
+        halfW , halfH = (self.size[0]/2 , self.size[1] /2) 
+        offx , offy   = (  -halfW , -halfH ) 
+        sclx , scly   = self.scale(level) 
+        # vertical line 
+        x  , y  = ((offx + 3/4*w)*sclx , (offy+b)*scly) # 3/4 width , 0 
+        x2 , y2 = ((offx + 3/4*w)*sclx , (offy + b + halfH /2)*scly ) # 3/4 width , 1/4 height 
  
-        print(x ,' ' , y , ' ')
-        print(x2 , ' ' , y2 , ' ') 
-  
-        x-=offx ; y-=offy ; x2-=offx ; y2-=offy 
+        x-=offx ; y-=offy ; x2-=offx ; y2-=offy # removing offset 
 
-        print(x ,' ' , y , ' ')
-        print(x2 , ' ' , y2 , ' ') 
         self.draw.line((x,y,x2,y2) , fill = self.color , width = self.borderLength) 
 
 
     def num_7(self, level : int ):
         b             = self.borderLength
         w , h         = self.size
-        halfW , halfH = (self.size[0]/2 , self.size[1] /2) # make var that is half the width and height
-        offx , offy   = (  -halfW , -halfH ) # make an offset (150 , 150) :: defult
-        sclx , scly   = self.scale(level) # getting the scale from the funtion 
-
-        x  , y  = ( (offx + 3/4*w)*sclx , (offy+b)*scly) # (150 , 3)
+        halfW , halfH = (self.size[0]/2 , self.size[1] /2) 
+        offx , offy   = (  -halfW , -halfH ) 
+        sclx , scly   = self.scale(level) 
+        #vertical line
+        x  , y  = ( (offx + 3/4*w)*sclx , (offy+b)*scly) 
         x2 , y2 = ( (offx + 3/4*w)*sclx , (offy + b + halfH /2)*scly )
-        x3 , y3 = ( (halfW+ offx )*sclx      , ( b + offy)*scly )  # (150,0) x= 150 * 1 -offx = 0 , y=150 * 1-offy = 0 
-        x4 , y4 = (((3/4*w) + offx)*sclx  , (b + offy)*scly ) # (3/4 size , 0)
-  
-        print(x ,' ' , y , ' ')
-        print(x2 , ' ' , y2 , ' ') 
-  
+        # horizantal line  
+        x3 , y3 = ( (halfW+ offx )*sclx   , ( b + offy)*scly )  
+        x4 , y4 = (((3/4*w) + offx)*sclx  , (b + offy)*scly )  
+
         x-=offx ; y-=offy ; x2-=offx ; y2-=offy 
         x3-=offx ; y3-=offy ; x4-=offx ; y4-=offy 
 
-        print(x ,' ' , y , ' ')
-        print(x2 , ' ' , y2 , ' ') 
         self.draw.line((x,y,x2,y2) , fill = self.color , width = self.borderLength) 
         self.draw.line((x3,y3,x4,y4) , fill =self.color , width = self.borderLength) 
 
@@ -171,23 +146,19 @@ class OldNumber():
     def num_8(self, level : int ):
         b             = self.borderLength
         w , h         = self.size
-        halfW , halfH = (self.size[0]/2 , self.size[1] /2) # make var that is half the width and height
-        offx , offy   = (  -halfW , -halfH ) # make an offset (150 , 150) :: defult
-        sclx , scly   = self.scale(level) # getting the scale from the funtion 
-
+        halfW , halfH = (self.size[0]/2 , self.size[1] /2) 
+        offx , offy   = (  -halfW , -halfH ) 
+        sclx , scly   = self.scale(level) 
+        #vertical line 
         x  , y  = ( (offx + 3/4*w)*sclx   , (offy+b)*scly) # (150 , 3)
         x2 , y2 = ( (offx + 3/4*w)*sclx   , (offy + b + halfH /2)*scly )
+        # down horizantal line 
         x3 , y3 = ( (halfW+ offx )*sclx   , (halfH/2 + offy)*scly ) 
         x4 , y4 = (((3/4*w) + offx)*sclx  , (halfH/2 + offy)*scly ) 
-  
-        print(x ,' ' , y , ' ')
-        print(x2 , ' ' , y2 , ' ') 
   
         x-=offx ; y-=offy ; x2-=offx ; y2-=offy 
         x3-=offx ; y3-=offy ; x4-=offx ; y4-=offy 
 
-        print(x ,' ' , y , ' ')
-        print(x2 , ' ' , y2 , ' ') 
         self.draw.line((x,y,x2,y2) , fill = self.color , width = self.borderLength) 
         self.draw.line((x3,y3,x4,y4) , fill = self.color , width = self.borderLength) 
 
@@ -195,9 +166,9 @@ class OldNumber():
     def num_9(self, level : int ):
         b             = self.borderLength
         w , h         = self.size
-        halfW , halfH = (self.size[0]/2 , self.size[1] /2) # make var that is half the width and height
-        offx , offy   = (  -halfW , -halfH ) # make an offset (150 , 150) :: defult
-        sclx , scly   = self.scale(level) # getting the scale from the funtion 
+        halfW , halfH = (self.size[0]/2 , self.size[1] /2) 
+        offx , offy   = (  -halfW , -halfH ) 
+        sclx , scly   = self.scale(level) 
 
         # vertical line
         x  , y  = ( (offx + 3/4*w)*sclx   , (offy+b)*scly) 
@@ -252,14 +223,15 @@ class OldNumber():
         self.call[ numbers[2] ](self , 2 ) # drawing hundreds 
         self.call[ numbers[3] ](self , 3 ) # drawing thousands 
 
-    def __init__(self , size = (300,300) , num : int = 1111):
+    def __init__(self , size = (300,300) , num : int = 1111 , bgcolor = (0,0,0,0), fgcolor = (255,255,255,255) ,  border:int = 3):
         if num >= 10000:
-            print("Sorry there is no number like that in this numbering system \n"
-            , " , But you can type any number from 0 -> 9999 and its fine" )
-        
+            pass
+
         else : 
             self.size = size
-            self.img = Image.new("RGBA" ,size , (0,0,0,0))
+            self.color = fgcolor
+            self.img = Image.new("RGBA" ,size , bgcolor)
+            self.borderLength = border
             self.draw = ImageDraw.Draw(self.img)
             self.final_img(num)
 
