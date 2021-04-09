@@ -5,7 +5,6 @@ an old numberign system that can write numbers from 0 - 9999
 
 ## using the script 
 
----
 ### requirments :
 
 * python 3
