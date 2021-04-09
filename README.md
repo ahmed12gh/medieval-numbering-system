@@ -10,6 +10,12 @@ an old numberign system that can write numbers from 0 - 9999
 
 * python 3
 * pillow
+
+**if** you dont have pillow installed just type :
+
+```
+pip install Pillow
+```
  
 just in the terminal type :
 
