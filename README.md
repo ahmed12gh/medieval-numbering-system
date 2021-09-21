@@ -1,6 +1,6 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/0-percent-optimized.svg)](https://forthebadge.com)
 # medieval-numbering-system
-an old numberign system that can write numbers from 0 - 9999
+an old numbering system that can write numbers from 0 - 9999
 
 ---
 
